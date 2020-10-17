@@ -13,8 +13,8 @@ const AudioPlayer = dynamic(() => import("../components/AudioPlayer"), {
 export default function Home() {
   const [showSonhos, setSonhos] = useState(true);
 
-  const toggleSonhos = () => {
-    setSonhos(!!!showSonhos);
+  const toggleSonhos = (equipe) => {
+    setSonhos(equipe);
   };
 
   return (
@@ -31,17 +31,18 @@ export default function Home() {
       <main className={styles.main}>
         <nav className={styles.menu}>
           <li className={styles.title}>sonhadouro</li>
-          <li id='menu-sonhos' onClick={toggleSonhos}>
+          <li id='menu-sonhos' onClick={() => toggleSonhos(true)}>
             sonhos
           </li>
-          <li>equipe</li>
-          <li>projeto</li>
+          <li onClick={() => toggleSonhos(false)}>equipe</li>
+          <li>
+            <a href='/projeto'>projeto</a>
+          </li>
           <li>notícias</li>
         </nav>
         <Sonhos showSonhos={showSonhos} />
         <footer>{/* <AudioPlayer /> */}</footer>
       </main>
-
       <footer className={styles.footer}></footer>
     </div>
   );

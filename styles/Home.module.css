@@ -30,8 +30,16 @@
   color: #444;
 }
 
+.thumbWrapper {
+  display: flex;
+}
+
 .submenu {
   padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  z-index: 1;
 }
 
 .submenu li {
@@ -49,15 +57,14 @@ li.title {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: -520px;
-  width: 100%;
+  width: 900px;
 }
 
 .sonhoThumb {
   cursor: pointer;
   transition: opacity 1s ease-in-out;
-  opacity: 0.02;
-  height: 300px;
+  opacity: 0.1;
+  height: 250px;
   width: 300px;
   display: flex;
   justify-content: center;

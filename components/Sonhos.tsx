@@ -3,22 +3,6 @@ import sonhosData from "../data/sonhos.json";
 import VideoPlayer from "./VideoPlayer";
 import styles from "../styles/Home.module.css";
 
-const SonhosMenu = () => (
-  <ul className={styles.submenu}>
-    {sonhosData.map((sonho) => {
-      return <li key={`link-${sonho.name}`}>{sonho.name}</li>;
-    })}
-  </ul>
-);
-
-const Video = () => (
-  <ul className={styles.submenu}>
-    {sonhosData.map((sonho) => {
-      return <li key={`link-${sonho.name}`}>{sonho.name}</li>;
-    })}
-  </ul>
-);
-
 export default function Sonhos(props) {
   const { showSonhos } = props;
   const [showVideo, setShowVideo] = useState(false);
@@ -31,11 +15,40 @@ export default function Sonhos(props) {
     setShowVideo(!showVideo);
   };
 
+  const SonhosMenu = () => (
+    <ul className={styles.submenu}>
+      {sonhosData.map((sonho) => {
+        return (
+          <li
+            key={`link-${sonho.name}`}
+            className={
+              (showSonhos && !sonho.equipe) || (!showSonhos && sonho.equipe)
+                ? `${styles.show}`
+                : `${styles.hide}`
+            }
+            onClick={() => {
+              toggleShowVideo(sonho.video);
+            }}
+          >
+            {sonho.name}
+          </li>
+        );
+      })}
+    </ul>
+  );
+
   const SonhosElements = () => (
     <div className={styles.sonhosContainer}>
       {sonhosData.map((sonho) => {
         return (
-          <div key={`thumb-${sonho.name}`} className={styles.sonhoThumb}>
+          <div
+            key={`thumb-${sonho.name}`}
+            className={
+              (showSonhos && !sonho.equipe) || (!showSonhos && sonho.equipe)
+                ? `${styles.sonhoThumb} ${styles.show}`
+                : `${styles.sonhoThumb} ${styles.hide}`
+            }
+          >
             <div
               onClick={() => {
                 toggleShowVideo(sonho.video);
@@ -49,8 +62,8 @@ export default function Sonhos(props) {
     </div>
   );
 
-  return showSonhos ? (
-    <div>
+  return (
+    <div className={styles.thumbWrapper}>
       <SonhosMenu />
       <SonhosElements />
       <div
@@ -69,7 +82,5 @@ export default function Sonhos(props) {
         <VideoPlayer path={currentVideo} />
       </div>
     </div>
-  ) : (
-    <div>hide</div>
   );
 }
