@@ -1,4 +1,4 @@
-import sonhosData from "../data/sonhos.json";
+import sonhosData from "../data/equipe.json";
 
 import Head from "next/head";
 import dynamic from "next/dynamic";
@@ -11,11 +11,11 @@ const AudioPlayer = dynamic(() => import("../components/AudioPlayer"), {
   ssr: false,
 });
 
-export default function Home() {
+export default function Equipe() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>sonhadouro</title>
+        <title>sonhadouro - equipe</title>
         <link rel='icon' href='/favicon.ico' />
         <link
           href='//fonts.googleapis.com/css2?family=Flamenco&display=swap'

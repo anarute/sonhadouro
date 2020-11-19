@@ -1,12 +1,12 @@
 import { useState } from "react";
-import sonhosData from "../data/sonhos.json";
 import VideoPlayer from "./VideoPlayer";
 import styles from "../styles/Home.module.css";
 
 export default function Sonhos(props) {
-  const { showSonhos } = props;
+  const { sonhosData } = props;
   const [showVideo, setShowVideo] = useState(false);
   const [currentVideo, setCurrentVideo] = useState("");
+  const [currentThumb, setCurrentThumb] = useState("");
 
   const toggleShowVideo = (video: string) => {
     console.log(video);
@@ -15,19 +15,41 @@ export default function Sonhos(props) {
     setShowVideo(!showVideo);
   };
 
+  const toggleShowThumb = (name: string) => {
+    // setCurrentVideo(video);
+    // document.getElementById(`thumb-${name}`).classList.add("fullOpacity");
+    setCurrentThumb(name);
+  };
+
+  const classesThumb = (sonho: any) => {
+    let classes = `${styles.sonhoThumb}`;
+    classes += currentThumb == sonho.name ? ` ${styles.fullOpacity}` : "";
+    // classes +=
+    //   (showSonhos && !sonho.equipe) || (!showSonhos && sonho.equipe)
+    //     ? ` ${styles.show}`
+    //     : ` ${styles.hide}`;
+    return classes;
+  };
+
   const SonhosMenu = () => (
     <ul className={styles.submenu}>
       {sonhosData.map((sonho) => {
         return (
           <li
             key={`link-${sonho.name}`}
-            className={
-              (showSonhos && !sonho.equipe) || (!showSonhos && sonho.equipe)
-                ? `${styles.show}`
-                : `${styles.hide}`
-            }
+            // className={
+            //   (showSonhos && !sonho.equipe) || (!showSonhos && sonho.equipe)
+            //     ? `${styles.show}`
+            //     : `${styles.hide}`
+            // }
             onClick={() => {
               toggleShowVideo(sonho.video);
+            }}
+            onMouseEnter={() => {
+              toggleShowThumb(sonho.name);
+            }}
+            onMouseOut={() => {
+              toggleShowThumb("");
             }}
           >
             {sonho.name}
@@ -41,14 +63,7 @@ export default function Sonhos(props) {
     <div className={styles.sonhosContainer}>
       {sonhosData.map((sonho) => {
         return (
-          <div
-            key={`thumb-${sonho.name}`}
-            className={
-              (showSonhos && !sonho.equipe) || (!showSonhos && sonho.equipe)
-                ? `${styles.sonhoThumb} ${styles.show}`
-                : `${styles.sonhoThumb} ${styles.hide}`
-            }
-          >
+          <div key={`thumb-${sonho.name}`} className={classesThumb(sonho)}>
             <div
               onClick={() => {
                 toggleShowVideo(sonho.video);

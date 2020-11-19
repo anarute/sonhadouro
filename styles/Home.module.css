@@ -3,10 +3,27 @@
   display: flex;
   flex: 1;
   justify-content: center;
+  font-family: "Flamenco";
+}
+
+.content {
+  display: grid;
+  font-family: "Open Sans";
+  grid-template-columns: 50% 50%;
+  font-size: 0.9em;
+  line-height: 2em;
+}
+
+.content h2 {
+  font-family: "Flamenco";
+}
+
+.colRight {
+  text-align: right;
 }
 
 .main {
-  max-width: 1200px;
+  max-width: 1000px;
   font-family: "Flamenco";
   flex: 1;
   display: flex;
@@ -22,12 +39,18 @@
   cursor: pointer;
   list-style-type: none;
   font-size: 1.2em;
-  margin-bottom: 0.5em;
   line-height: 2em;
+  align-self: end;
 }
 
 .menu li:hover {
   color: #444;
+}
+
+li.title {
+  font-size: 2em;
+  line-height: 1.5em;
+  margin-right: 150px;
 }
 
 .thumbWrapper {
@@ -39,7 +62,6 @@
   display: flex;
   flex-direction: column;
   width: 200px;
-  z-index: 1;
 }
 
 .submenu li {
@@ -49,26 +71,28 @@
   line-height: 2em;
 }
 
-li.title {
-  font-size: 2em;
-}
-
 .sonhosContainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 900px;
+  width: 1200px;
 }
 
 .sonhoThumb {
   cursor: pointer;
-  transition: opacity 1s ease-in-out;
-  opacity: 0.1;
+  transition: all 1s ease-in-out;
+  opacity: 0.01;
   height: 250px;
-  width: 300px;
+  width: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 0px;
+}
+
+.sonhoThumb.fullOpacity {
+  transition: all 1s ease-in-out;
+  opacity: 1;
 }
 
 .sonhoThumb:hover {
@@ -82,12 +106,9 @@ li.title {
   position: absolute;
   top: 0;
   left: 0;
-  /* display: none; */
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
   padding: 0;
   margin: 0;
+  z-index: 1;
 }
 
 .show {
@@ -104,7 +125,6 @@ li.title {
   position: fixed;
   top: 0;
   left: 0;
-  /* display: none; */
   justify-content: center;
   align-items: center;
   padding: 0;
@@ -113,4 +133,8 @@ li.title {
 
 .player {
   z-index: 1;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }
