@@ -6,26 +6,20 @@ export default function Navbar() {
     <section>
       <nav className={styles.menu}>
         <li className={styles.title}>
-          <Link href='/'>
-            <a>sonhadouro</a>
-          </Link>
+          <Link href='/'>sonhadouro</Link>
         </li>
         <li id='menu-sonhos'>
-          <Link href='/'>
-            <a>sonhos</a>
-          </Link>
+          <Link href='/'>sonhos</Link>
         </li>
         <li>
-          <Link href='/equipe'>
-            <a>equipe</a>
-          </Link>
+          <Link href='/equipe'>equipe</Link>
         </li>
         <li>
-          <Link href='/projeto'>
-            <a>projeto</a>
-          </Link>
+          <Link href='/projeto'>projeto</Link>
         </li>
-        <li>notícias</li>
+        <li>
+          <Link href='/noticias'>notícias</Link>
+        </li>
       </nav>
     </section>
   );

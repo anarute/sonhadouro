@@ -14,3 +14,9 @@ a {
 * {
   box-sizing: border-box;
 }
+
+p {
+  font-family: "Open Sans";
+  font-size: 0.8em;
+  line-height: 2em;
+}

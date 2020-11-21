@@ -10,7 +10,7 @@
   display: grid;
   font-family: "Open Sans";
   grid-template-columns: 50% 50%;
-  font-size: 0.9em;
+  font-size: 1em;
   line-height: 2em;
 }
 
@@ -23,11 +23,13 @@
 }
 
 .main {
-  max-width: 1000px;
+  display: flex;
   font-family: "Flamenco";
   flex: 1;
-  display: flex;
   flex-direction: column;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
 .menu {
@@ -81,7 +83,7 @@ li.title {
 .sonhoThumb {
   cursor: pointer;
   transition: all 1s ease-in-out;
-  opacity: 0.01;
+  opacity: 0;
   height: 250px;
   width: 200px;
   display: flex;
@@ -90,9 +92,9 @@ li.title {
   margin-left: 0px;
 }
 
-.sonhoThumb.fullOpacity {
+.fullOpacity {
   transition: all 1s ease-in-out;
-  opacity: 1;
+  opacity: 0.5;
 }
 
 .sonhoThumb:hover {
@@ -137,4 +139,17 @@ li.title {
 
 .uppercase {
   text-transform: uppercase;
+}
+
+.excerpt {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 15px;
+  margin-top: 30px;
+}
+
+.footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  z-index: -1;
 }
