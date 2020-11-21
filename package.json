@@ -8,12 +8,14 @@
     "start": "next start"
   },
   "dependencies": {
-    "@types/wavesurfer.js": "^3.3.1",
+    "date-fns": "^2.16.1",
+    "gray-matter": "^4.0.2",
     "next": "9.5.3",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-player": "^2.6.2",
-    "wavesurfer.js": "^4.0.1"
+    "remark": "^13.0.0",
+    "remark-html": "^13.0.1"
   },
   "devDependencies": {
     "@types/node": "^14.11.1",
