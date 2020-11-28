@@ -23,7 +23,7 @@ export default function Home() {
             width='100%'
             height='100'
             scrolling='no'
-            frameborder='no'
+            frameBorder='no'
             src='//w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F114286830%3Fsecret_token%3Ds-86avf&amp;color=d3d3d3&amp;auto_play=false&amp;show_artwork=false&amp;show_user=false&amp;show_comments=false&amp;sharing=false&amp;liking=false'
           ></iframe>
         </div>

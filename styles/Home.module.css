@@ -42,7 +42,7 @@
   list-style-type: none;
   font-size: 1.2em;
   line-height: 2em;
-  align-self: end;
+  align-self: baseline;
 }
 
 .menu li:hover {
@@ -110,7 +110,25 @@ li.title {
   left: 0;
   padding: 0;
   margin: 0;
-  z-index: 1;
+  transition: all 1s ease-in-out;
+  z-index: 2;
+}
+
+.overlay::after {
+  content: "×";
+  position: absolute;
+  right: 25px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  top: 20px;
+  background-color: #888;
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .show {
@@ -131,10 +149,11 @@ li.title {
   align-items: center;
   padding: 0;
   margin: 0;
+  z-index: 3;
 }
 
 .player {
-  z-index: 1;
+  z-index: 3;
 }
 
 .uppercase {
@@ -151,5 +170,5 @@ li.title {
   width: 100%;
   position: fixed;
   bottom: 0;
-  z-index: -1;
+  z-index: 0;
 }
