@@ -64,6 +64,7 @@ li.title {
   display: flex;
   flex-direction: column;
   width: 200px;
+  position: relative;
 }
 
 .submenu li {
@@ -82,23 +83,106 @@ li.title {
 
 .sonhoThumb {
   cursor: pointer;
-  transition: all 1s ease-in-out;
+  transition: all 2s ease;
   opacity: 0;
-  height: 250px;
-  width: 200px;
+  height: 120px;
+  width: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-left: 0px;
+  position: absolute;
 }
 
-.fullOpacity {
-  transition: all 1s ease-in-out;
-  opacity: 0.5;
-}
-
+.submenuLink:hover > .sonhoThumb,
 .sonhoThumb:hover {
   opacity: 1;
+  transition: opacity 5s ease, opacity 0.5s ease;
+}
+
+.thumbEquipe,
+.thumbEntrevista {
+  top: 0;
+  left: 350px;
+}
+
+/* Equipe */
+
+.submenuLink:nth-of-type(2n) .thumbEquipe {
+  left: 500px;
+}
+
+.submenuLink:nth-of-type(3n) .thumbEquipe {
+  left: 650px;
+}
+
+.submenuLink:nth-of-type(n + 4) .thumbEquipe {
+  top: 150px;
+}
+
+.submenuLink:nth-of-type(n + 7) .thumbEquipe {
+  top: 300px;
+}
+
+/* Entrevistas */
+
+.submenuLink:nth-of-type(1) .thumbEntrevista {
+  left: 510px;
+  top: 30px;
+  /* ok */
+}
+
+.submenuLink:nth-of-type(2) .thumbEntrevista {
+  left: 610px;
+  top: 60px;
+  /* ok */
+}
+
+.submenuLink:nth-of-type(3) .thumbEntrevista {
+  top: 120px;
+  left: 450px;
+  /* ok */
+}
+
+.submenuLink:nth-of-type(4) .thumbEntrevista {
+  top: 240px;
+  left: 450px;
+  /* background-color: aqua; */
+}
+.submenuLink:nth-of-type(5) .thumbEntrevista {
+  top: 350px;
+  left: 450px;
+  /* background-color: red; */
+}
+.submenuLink:nth-of-type(6) .thumbEntrevista {
+  top: 250px;
+  left: 550px;
+}
+.submenuLink:nth-of-type(7) .thumbEntrevista {
+  top: 100px;
+  left: 350px;
+  /* background-color: pink; */
+}
+.submenuLink:nth-of-type(8) .thumbEntrevista {
+  top: 170px;
+  left: 580px;
+  /* background-color: yellow; */
+}
+.submenuLink:nth-of-type(9) .thumbEntrevista {
+  top: 50px;
+  left: 350px;
+}
+.submenuLink:nth-of-type(10) .thumbEntrevista {
+  top: 220px;
+  left: 650px;
+}
+.submenuLink:nth-of-type(11) .thumbEntrevista {
+  top: 300px;
+  left: 350px;
+}
+.submenuLink:nth-of-type(12) .thumbEntrevista {
+  top: 150px;
+  left: 350px;
 }
 
 .overlay {
@@ -117,12 +201,12 @@ li.title {
 .overlay::after {
   content: "×";
   position: absolute;
-  right: 25px;
+  left: 25px;
   width: 30px;
   height: 30px;
   border-radius: 50%;
   top: 20px;
-  background-color: #888;
+  background-color: #aaa;
   color: #fff;
   text-align: center;
   line-height: 30px;

@@ -1,72 +1,84 @@
 [
   {
     "id": "alexandra",
+    "equipe": false,
     "name": "Alexandra",
     "thumb": "/img/spermats/fig1.png",
     "video": "//player.vimeo.com/video/69245416"
   },
   {
     "id": "andre",
+    "equipe": false,
     "name": "André",
     "thumb": "/img/spermats/fig2.png",
     "video": "//player.vimeo.com/video/69247870"
   },
   {
     "id": "daniela",
+    "equipe": false,
     "name": "Daniela",
     "thumb": "/img/spermats/fig3.png",
     "video": "//player.vimeo.com/video/69249659"
   },
   {
     "id": "diva",
+    "equipe": false,
     "name": "Diva",
     "thumb": "/img/spermats/fig4.png",
     "video": "//player.vimeo.com/video/69251889"
   },
   {
     "id": "felipe",
+    "equipe": false,
     "name": "Felipe",
     "thumb": "/img/spermats/fig5.png",
     "video": "//player.vimeo.com/video/69253593"
   },
   {
     "id": "luiz",
+    "equipe": false,
     "name": "Luiz",
     "thumb": "/img/spermats/fig6.png",
     "video": "//player.vimeo.com/video/69257283"
   },
   {
     "id": "maria",
+    "equipe": false,
     "name": "Maria de Fátima",
     "thumb": "/img/spermats/fig7.png",
     "video": "//player.vimeo.com/video/69259513"
   },
   {
     "id": "marta",
+    "equipe": false,
     "name": "Marta",
     "thumb": "/img/spermats/fig8.png",
     "video": "//player.vimeo.com/video/69265585"
   },
   {
     "id": "paula",
+    "equipe": false,
     "name": "Paula",
     "thumb": "/img/spermats/fig9.png",
     "video": "//player.vimeo.com/video/69268837"
   },
   {
     "id": "rogerio",
+    "equipe": false,
     "name": "Rogério",
     "thumb": "/img/spermats/fig10.png",
     "video": "//player.vimeo.com/video/69273404"
   },
   {
     "id": "rosberg",
+    "equipe": false,
     "name": "Rosberg",
     "thumb": "/img/spermats/fig11.png",
     "video": "//player.vimeo.com/video/69275387"
   },
   {
     "id": "vinicius",
+    "equipe": false,
     "name": "Vinicius",
     "thumb": "/img/spermats/fig12.png",
     "video": "//player.vimeo.com/video/69295810"
