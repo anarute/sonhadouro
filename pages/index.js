@@ -1,3 +1,6 @@
+import dynamic from "next/dynamic";
+import { useState } from "react";
+
 import sonhosData from "../data/sonhos.json";
 
 import Head from "next/head";
@@ -6,7 +9,12 @@ import Meta from "../components/meta";
 import Sonhos from "../components/Sonhos";
 import Navbar from "../components/Navbar";
 
+const AudioPlayer = dynamic(() => import("../components/AudioPlayer"), {
+  ssr: false,
+});
+
 export default function Home() {
+  const [playing, setPlay] = useState(false);
   return (
     <>
       <Head>
@@ -15,17 +23,15 @@ export default function Home() {
       <Meta />
       <main className={styles.main}>
         <Navbar current='sonhos' />
-        <Sonhos sonhosData={sonhosData} />
+        <Sonhos sonhosData={sonhosData} setPlay={setPlay} />
       </main>
       <footer className={styles.footer}>
         <div id='trilha'>
-          <iframe
-            width='100%'
-            height='100'
-            scrolling='no'
-            frameBorder='no'
-            src='//w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F114286830%3Fsecret_token%3Ds-86avf&amp;color=d3d3d3&amp;auto_play=false&amp;show_artwork=false&amp;show_user=false&amp;show_comments=false&amp;sharing=false&amp;liking=false'
-          ></iframe>
+          <AudioPlayer
+            url='/audio/soundtrack.mp3'
+            playing={playing}
+            setPlay={setPlay}
+          />
         </div>
       </footer>
     </>

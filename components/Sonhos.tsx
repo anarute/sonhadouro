@@ -3,11 +3,14 @@ import VideoPlayer from "./VideoPlayer";
 import styles from "../styles/Home.module.css";
 
 export default function Sonhos(props) {
-  const { sonhosData } = props;
+  const { sonhosData, setPlay } = props;
   const [showVideo, setShowVideo] = useState(false);
   const [currentVideo, setCurrentVideo] = useState("");
 
   const toggleShowVideo = (video: string) => {
+    if (video) {
+      setPlay(false);
+    }
     setCurrentVideo(video);
 
     setShowVideo(!showVideo);
