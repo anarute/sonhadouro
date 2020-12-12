@@ -3,11 +3,11 @@ import { useState } from "react";
 
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import Meta from "../components/meta";
-import Sonhos from "../components/Sonhos";
-import Navbar from "../components/Navbar";
+import Meta from "./meta";
+import Sonhos from "./Sonhos";
+import Navbar from "./Navbar";
 
-const AudioPlayer = dynamic(() => import("../components/AudioPlayer"), {
+const AudioPlayer = dynamic(() => import("./AudioPlayer"), {
   ssr: false,
 });
 
