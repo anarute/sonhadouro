@@ -26,20 +26,9 @@ const Project = () => (
               TV e Vídeo, ministrada pelo Professor Doutor Gilberto Alexandre
               Sobrinho. Foi contemplado pela edição 2012/2013 da Bolsa SAE
               Aluno-Artista da Unicamp e ganhou o edital 1º Ocupa Atibaia da
-              organização Incubadora de Artistas em março de 2014. contato
+              organização Incubadora de Artistas em março de 2014.
             </p>
-            <p>sonhadouro@gmail.com</p>
-            <p>
-              Instituto de Artes
-              <br />
-              Rua Elis Regina, 50
-              <br />
-              Cidade Universitária “Zeferino Vaz”
-              <br />
-              Barão Geraldo, Campinas, SP
-              <br />
-              13083-970 – Caixa Postal 6159
-            </p>
+            <p>Contato: sonhadouro@gmail.com</p>
           </div>
           <div className={styles.colRight}>
             <h2>ficha técnica</h2>
@@ -56,7 +45,7 @@ const Project = () => (
               Myung Hwa Baldini
             </p>
             <p>
-              <span className={styles.uppercase}>Ass. Produção</span>
+              <span className={styles.uppercase}>Assist. Produção</span>
               <br />
               Franco Simões
               <br />
@@ -68,7 +57,7 @@ const Project = () => (
               Luiza Folegatti
             </p>
             <p>
-              <span className={styles.uppercase}>Ass. Fotografia</span>
+              <span className={styles.uppercase}>Assist. Fotografia</span>
               <br />
               Samuel Baptista
             </p>
