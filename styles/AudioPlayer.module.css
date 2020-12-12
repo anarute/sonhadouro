@@ -55,3 +55,9 @@
   display: grid;
   grid-template-columns: 10% 90%;
 }
+
+.loadBar {
+  width: 20px;
+  left: 50%;
+  position: absolute;
+}

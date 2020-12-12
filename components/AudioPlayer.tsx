@@ -19,6 +19,7 @@ const formWaveSurferOptions = (ref) => ({
 export default function Waveform({ url, playing, setPlay }) {
   const waveformRef = useRef(null);
   const wavesurfer = useRef(null);
+  const [loading, setLoading] = useState(true);
 
   if (wavesurfer && wavesurfer.current) {
     if (playing) {
@@ -40,6 +41,9 @@ export default function Waveform({ url, playing, setPlay }) {
     wavesurfer.current.on("pause", function () {
       setPlay(false);
     });
+    wavesurfer.current.on("ready", function () {
+      setLoading(false);
+    });
     return () => wavesurfer.current.destroy();
   }, [url, setPlay]);
 
@@ -49,15 +53,21 @@ export default function Waveform({ url, playing, setPlay }) {
 
   return (
     <div className={styles.audioWrapper}>
-      <div className={styles.controls}>
-        <button onClick={handlePlayPause} className={styles.controlButton}>
-          {!playing ? (
-            <div className={styles.triangle}></div>
-          ) : (
-            <div className={styles.pause}>▌▌</div>
-          )}
-        </button>
-      </div>
+      {loading ? (
+        <div className={styles.loadBar}>
+          <img src='/img/loader.svg' alt='loader' />
+        </div>
+      ) : (
+        <div className={styles.controls}>
+          <button onClick={handlePlayPause} className={styles.controlButton}>
+            {!playing ? (
+              <div className={styles.triangle}></div>
+            ) : (
+              <div className={styles.pause}>▌▌</div>
+            )}
+          </button>
+        </div>
+      )}
       <div id='waveform' ref={waveformRef} />
     </div>
   );
