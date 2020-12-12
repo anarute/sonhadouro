@@ -49,6 +49,13 @@
   color: #444;
 }
 
+.menu li.current,
+.menu li.current:hover {
+  color: #888;
+  text-decoration: line-through;
+  cursor: default;
+}
+
 li.title {
   font-size: 2em;
   line-height: 1.5em;

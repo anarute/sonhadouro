@@ -7,7 +7,7 @@ import Head from "next/head";
 export default function News({ allPosts }) {
   return (
     <>
-      <Layout>
+      <Layout current='noticias'>
         <Head>
           <title>sonhadouro - notícias</title>
         </Head>

@@ -5,7 +5,7 @@ import Container from "../components/container";
 
 const Project = () => (
   <>
-    <Layout>
+    <Layout current='projeto'>
       <Head>
         <title>sonhadouro - projeto</title>
       </Head>

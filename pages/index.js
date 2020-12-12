@@ -14,7 +14,7 @@ export default function Home() {
       </Head>
       <Meta />
       <main className={styles.main}>
-        <Navbar />
+        <Navbar current='sonhos' />
         <Sonhos sonhosData={sonhosData} />
       </main>
       <footer className={styles.footer}>

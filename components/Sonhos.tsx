@@ -8,7 +8,6 @@ export default function Sonhos(props) {
   const [currentVideo, setCurrentVideo] = useState("");
 
   const toggleShowVideo = (video: string) => {
-    console.log(video);
     setCurrentVideo(video);
 
     setShowVideo(!showVideo);
